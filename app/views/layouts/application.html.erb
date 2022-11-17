@@ -30,8 +30,13 @@
           <a href="/photos">Photos</a>
         </li>
         <li>
-          
+          <a href="/user_sign_out">Sign out</a>
         </li>
+        <% if session.fetch(:user_id).present? %>
+        <li>
+          Signed in as user <%= session.fetch(:user_id) %>
+        </li>
+        <% end %>
       </ul>
     </nav>
     <% if notice.present? %>
@@ -41,7 +46,7 @@
     <% end %>
     
     <% if alert.present? %>
-      <div style="border: thin solid red; text-color: red; background: light red;">
+      <div style="border: thin solid red; color: red; background: light red;">
         <%= alert %>
       </div>
     <% end %>

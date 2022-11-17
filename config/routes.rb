@@ -12,6 +12,13 @@ Rails.application.routes.draw do
 
   # UPDATE
   get("/update_user/:the_user_id", { :controller => "users", :action => "update" })
+  # SIGN OUT
+  get("/user_sign_out", { :controller => "users", :action => "sign_out" })
+  # User SIGN IN
+
+  get("/user_sign_in", { :controller => "users", :action => "new_session_form" })
+
+  post("/verify_credentials", { :controller => "users", :action => "authenticate" })
 
   # DELETE
   get("/delete_user/:the_user_id", { :controller => "users", :action => "destroy" })
