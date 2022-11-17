@@ -15,6 +15,36 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+          <li>
+            <a href="/user_sign_in">Sign In</a>
+          </li>
+          <li>
+            <a href="/user_sign_up">Sign Up</a>
+          </li>
+        <li>
+          <a href="/users">Users</a>
+        </li>
+        <li>
+          <a href="/photos">Photos</a>
+        </li>
+        <li>
+          
+        </li>
+      </ul>
+    </nav>
+    <% if notice.present? %>
+      <div style="border: thin solid green; color: dark green; background: light green; align: center;">
+        <%= notice %>
+      </div>
+    <% end %>
+    
+    <% if alert.present? %>
+      <div style="border: thin solid red; text-color: red; background: light red;">
+        <%= alert %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
